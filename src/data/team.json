@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Amina Hassan",
+    "role": "Frontend Engineer",
+    "description": "Leads the UI architecture, component design, and documentation experience.",
+    "photoAlt": "Portrait placeholder for Amina Hassan"
+  },
+  {
+    "name": "Omar El-Sayed",
+    "role": "Product and UX",
+    "description": "Shapes the content structure, flow, and user experience for the site.",
+    "photoAlt": "Portrait placeholder for Omar El-Sayed"
+  },
+  {
+    "name": "Layla Moursi",
+    "role": "Quality and Documentation",
+    "description": "Ensures clarity, structure, and maintainability across the project content.",
+    "photoAlt": "Portrait placeholder for Layla Moursi"
+  }
+]

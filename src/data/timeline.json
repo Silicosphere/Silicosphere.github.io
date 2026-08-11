@@ -1,0 +1,37 @@
+[
+  {
+    "week": 1,
+    "title": "Project Proposal",
+    "description": "Defined the problem statement, scope, and project objectives for the graduation documentation platform.",
+    "date": "2026-02-01",
+    "status": "Done"
+  },
+  {
+    "week": 2,
+    "title": "Requirements Gathering",
+    "description": "Collected stakeholder feedback and mapped the information architecture for the documentation experience.",
+    "date": "2026-02-08",
+    "status": "Done"
+  },
+  {
+    "week": 3,
+    "title": "Wireframes and UX Planning",
+    "description": "Shaped the screen structure and content hierarchy for a clean, static documentation site.",
+    "date": "2026-02-15",
+    "status": "Done"
+  },
+  {
+    "week": 4,
+    "title": "Frontend Foundation",
+    "description": "Bootstrapped the React, Vite, Tailwind, and Ant Design base for the documentation site.",
+    "date": "2026-02-22",
+    "status": "In Progress"
+  },
+  {
+    "week": 5,
+    "title": "Content and SEO",
+    "description": "Completed page sections, SEO metadata, and accessibility improvements for a polished presentation.",
+    "date": "2026-03-01",
+    "status": "Planned"
+  }
+]
