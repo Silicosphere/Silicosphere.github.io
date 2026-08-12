@@ -1,34 +1,39 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import { Layout, Menu, Button, Drawer } from 'antd'
+import { Layout, Drawer, Button } from 'antd'
 import { useState } from 'react'
+import { team } from '../../constants/team'
 
 const { Header, Content, Footer } = Layout
 
-const menuItems = [
-  { key: '/', label: <Link to="/">Home</Link> },
-  { key: '/timeline', label: <Link to="/timeline">Timeline</Link> },
-  { key: '/team', label: <Link to="/team">About Us</Link> },
+const navItems = [
+  { to: '/', label: 'Home' },
+  { to: '/updates', label: 'Updates' },
+  { to: '/timeline', label: 'Timeline' },
+  { to: '/team', label: 'People' },
 ]
 
 export function MainLayout() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const { pathname } = useLocation()
+  const selectedKey = pathname === '/' ? '/' : pathname
 
   return (
     <Layout className="app-layout">
       <Header className="app-header">
         <div className="app-header-inner">
           <Link to="/" className="app-brand">
-            Graduation Documentation
+            <span className="app-brand-name">{team.name}</span>
           </Link>
 
-          <div className="app-header-actions">
-            <Menu
-              mode="horizontal"
-              items={menuItems}
-              className="app-menu"
-              selectedKeys={[pathname === '/' ? '/' : pathname]}
-            />
+          <div className="app-header-side">
+            <nav className="app-nav" aria-label="Primary">
+              {navItems.map((item) => (
+                <Link key={item.to} to={item.to} className={selectedKey === item.to ? 'is-active' : undefined}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
             <Button
               type="text"
               className="app-hamburger"
@@ -42,20 +47,37 @@ export function MainLayout() {
       </Header>
 
       <Drawer
-        title="Navigation"
+        title={team.name}
         placement="right"
         onClose={() => setDrawerOpen(false)}
         open={drawerOpen}
-        className="app-drawer"
       >
-        <Menu mode="inline" items={menuItems} className="app-drawer-menu" selectedKeys={[pathname === '/' ? '/' : pathname]} />
+        <nav className="app-drawer-nav" aria-label="Mobile">
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              className={selectedKey === item.to ? 'is-active' : undefined}
+              onClick={() => setDrawerOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </Drawer>
 
       <Content className="app-content">
         <Outlet />
       </Content>
       <Footer className="app-footer">
-        University of Science • Faculty of Computer Science • 2026
+        <div className="app-footer-inner">
+          <p className="app-footer-main">
+            {team.name} &bull; {team.university} &bull; {team.faculty}
+          </p>
+          <p className="app-footer-sub">
+            &copy; {team.year} {team.name}.
+          </p>
+        </div>
       </Footer>
     </Layout>
   )

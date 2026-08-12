@@ -1,6 +1,19 @@
+import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
+import { team } from '../constants/team'
 import { SectionTitle } from '../components/common/SectionTitle'
 import { getTeamMembers } from '../services/teamService'
+import saifPhoto from '../assets/images/saif.png'
+import gadPhoto from '../assets/images/gad.png'
+import hagrasPhoto from '../assets/images/hagras.png'
+import fadyPhoto from '../assets/images/fady.png'
+
+const photoMap = {
+  'saif.png': saifPhoto,
+  'gad.png': gadPhoto,
+  'hagras.png': hagrasPhoto,
+  'fady.png': fadyPhoto,
+}
 
 export function TeamPage() {
   const members = getTeamMembers()
@@ -8,27 +21,42 @@ export function TeamPage() {
   return (
     <main>
       <Helmet>
-        <title>Graduation Documentation | About Us</title>
-        <meta name="description" content="Meet the team behind the graduation project documentation website." />
+        <title>{`${team.name} | People`}</title>
+        <meta name="description" content="Meet the people behind the world models BSc thesis." />
       </Helmet>
 
-      <section className="team-wrapper team-card">
-        <SectionTitle eyebrow="About us" title="The team behind the project" description="Each member is represented as a reusable profile card, with data sourced from structured JSON content." />
+      <section className="page-section">
+        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <SectionTitle
+            eyebrow="People"
+            title="The Ultimate Team"
+            description="The members driving this thesis."
+          />
+        </motion.div>
 
-        <div className="team-grid">
-          {members.map((member) => (
-            <article key={member.name} className="member-card">
+        <div className="people-list">
+          {members.map((member, index) => (
+            <motion.article
+              key={member.name}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="member-row"
+            >
+              <img
+                className="member-photo"
+                src={photoMap[member.photo]}
+                alt={member.photoAlt}
+                loading="lazy"
+              />
               <div className="member-card-content">
-                <div className="member-avatar" aria-label={member.photoAlt}>
-                  {member.name.split(' ').map((part) => part[0]).join('').slice(0, 2)}
-                </div>
-                <div>
-                  <h3>{member.name}</h3>
-                  <p className="member-role">{member.role}</p>
-                </div>
+                <h3>{member.name}</h3>
+                <p className="member-role">{member.role}</p>
+                {member.description ? (
+                  <p className="member-description">{member.description}</p>
+                ) : null}
               </div>
-              <p className="member-description">{member.description}</p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </section>
