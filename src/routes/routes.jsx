@@ -30,5 +30,4 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: '/Silicosphere.github.io/' },
 )
