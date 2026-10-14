@@ -4,6 +4,8 @@ import { HomePage } from '../pages/HomePage'
 import { UpdatesPage } from '../pages/UpdatesPage'
 import { TimelinePage } from '../pages/TimelinePage'
 import { TeamPage } from '../pages/TeamPage'
+import { PostsPage } from '../pages/PostsPage'
+import { PostPage } from '../pages/PostPage'
 
 export const router = createBrowserRouter(
   [
@@ -18,6 +20,14 @@ export const router = createBrowserRouter(
         {
           path: 'updates',
           element: <UpdatesPage />,
+        },
+        {
+          path: 'posts',
+          element: <PostsPage />,
+        },
+        {
+          path: 'posts/:slug',
+          element: <PostPage />,
         },
         {
           path: 'timeline',

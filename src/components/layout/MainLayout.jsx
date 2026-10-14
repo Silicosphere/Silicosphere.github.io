@@ -7,6 +7,7 @@ const { Header, Content, Footer } = Layout
 
 const navItems = [
   { to: '/', label: 'Home' },
+  { to: '/posts', label: 'Posts' },
   { to: '/updates', label: 'Updates' },
   { to: '/timeline', label: 'Timeline' },
   { to: '/team', label: 'People' },
@@ -15,7 +16,7 @@ const navItems = [
 export function MainLayout() {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const { pathname } = useLocation()
-  const selectedKey = pathname === '/' ? '/' : pathname
+  const selectedKey = pathname.startsWith('/posts') ? '/posts' : pathname
 
   return (
     <Layout className="app-layout">

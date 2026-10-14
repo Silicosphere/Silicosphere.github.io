@@ -15,6 +15,13 @@ const fadeUp = {
   transition: { duration: 0.5 },
 }
 
+const facts = [
+  { label: 'Compute', value: 'SBME Dept Cluster & HPC grant from MoHESR' },
+  { label: 'Benchmark', value: 'IntPhys2' },
+  { label: 'University', value: 'Cairo University' },
+  { label: 'Supervisors', value: 'Cairo University & EPFL' },
+]
+
 export function HomePage() {
   const updates = getLatestUpdates(4)
   const mainQuote = quotes.find((quote) => quote.id === 'piaget')
@@ -31,7 +38,7 @@ export function HomePage() {
       <section className="hero">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <p className="hero-eyebrow">
-            BSc thesis &bull; world models &bull; {team.university}
+            BSc thesis &bull; {team.university}
           </p>
           <h1 className="hero-title">
             Learning to
@@ -64,6 +71,15 @@ export function HomePage() {
           <WorldModelVisual />
         </motion.div>
       </section>
+
+      <motion.section {...fadeUp} className="facts-strip" aria-label="Project at a glance">
+        {facts.map((fact) => (
+          <div key={fact.label} className="fact">
+            <p className="fact-label">{fact.label}</p>
+            <p className="fact-value">{fact.value}</p>
+          </div>
+        ))}
+      </motion.section>
 
       <section className="quote-section">
         <motion.blockquote {...fadeUp} className="main-quote">
