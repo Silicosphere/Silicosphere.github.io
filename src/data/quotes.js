@@ -9,7 +9,7 @@ export const quotes = [
   {
     id: 'li',
     text:
-      'Spatial intelligence is AI \u2019 s next frontier and that world models are the path to it',
+      'Spatial intelligence is AI\u2019s next frontier and that world models are the path to it',
     author: 'Fei-Fei Li',
   },
   {

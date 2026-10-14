@@ -1,25 +1,27 @@
 [
   {
     "name": "Saif Mohammed",
-    "role": "Something",
+    "role": "Team Member",
     "photo": "saif.png",
-    "photoAlt": "Portrait of Saif Mohammed"
+    "photoAlt": "Portrait of Saif Mohammed",
+    "website": "https://saifmohammed22.github.io/"
   },
   {
     "name": "Mohamed Gad",
-    "role": "Something",
+    "role": "Team Member",
     "photo": "gad.png",
-    "photoAlt": "Portrait of Mohamed Gad"
+    "photoAlt": "Portrait of Mohamed Gad",
+    "website": "https://gad-ma.github.io/"
   },
   {
     "name": "Mohamed Hagras",
-    "role": "Something",
+    "role": "Team Member",
     "photo": "hagras.png",
     "photoAlt": "Portrait of Mohamed Hagras"
   },
   {
     "name": "Fady Osama",
-    "role": "Something",
+    "role": "Team Member",
     "photo": "fady.png",
     "photoAlt": "Portrait of Fady Osama"
   }

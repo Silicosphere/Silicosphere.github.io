@@ -1,5 +1,13 @@
 [
   {
+    "id": "update-2",
+    "date": "2026-10-14",
+    "category": "Resources",
+    "title": "HPC resources granted by MoHESR",
+    "summary": "We were successfully granted High-Performance Computing (HPC) resources offered by the Ministry of Higher Education and Scientific Research (MoHESR), which will power our world model training and experiments.",
+    "status": "Live"
+  },
+  {
     "id": "update-1",
     "date": "2026-08-12",
     "category": "Release",

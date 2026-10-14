@@ -1,16 +1,14 @@
-# React + Vite
+# BSc Thesis Website: World Models
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Website for our Cairo University BSc thesis on world models (sample efficiency and physics intuition, evaluated on IntPhys2).
 
-Currently, two official plugins are available:
+Built with React, Vite, Ant Design and Framer Motion. Content lives in `src/data`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build
+npm run lint
+```
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Deployed to GitHub Pages via `.github/workflows/deploy.yml`.

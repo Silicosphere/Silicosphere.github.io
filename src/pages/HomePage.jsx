@@ -50,7 +50,7 @@ export function HomePage() {
             <Link to="/updates">Updates</Link>
             <Link to="/timeline">Timeline</Link>
             <Link to="/team">People</Link>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a href="https://github.com/Silicosphere" target="_blank" rel="noreferrer">
               GitHub
             </a>
           </div>
